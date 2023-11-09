@@ -1,0 +1,50 @@
+<div class="form-card">
+  <form [formGroup]="form">
+      <div class="form-group">
+        <h3>SMOCIP Unit:
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;" for="qty"> Qty </label>
+        <select id="int_SMOCIP_unit_COUNT" style="width: 60px; height: 40px;" formControlName="int_SMOCIP_unit_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+     <!--    <div *ngFor="let item of getQuantityArray(); let i=index" > -->
+      <div *ngFor="let item of entries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">S No</label>
+          <!-- <div>{{i}}</div> -->
+          <input type="text"  id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no' >
+        </div>
+        <div class="form-group">
+          <label  *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd' >
+        </div>
+        <div class="form-group">
+          <label  *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+        <div class="form-group">
+          <label  *ngIf="i === 0">Make</label>
+          <select id="{{'str_kawach_card_make'+i}}" formControlName='str_kawach_card_make'>
+            <option value="make1">Make 1</option>
+            <option value="make2">Make 2</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label  *ngIf="i === 0">Power Supply</label>
+          <input type="text" id="{{'int_kawach_card_ps'+i}}" formControlName='int_kawach_card_ps'>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </form>
+ <!--  <button type="submit" class="submit-button" (click)="onSubmit()">Next</button> -->
+</div>
+
+
+
+

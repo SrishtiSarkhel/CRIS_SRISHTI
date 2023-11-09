@@ -1,0 +1,514 @@
+<nav class="navbar navbar-light custom-navbar custom-navbar-blue">
+    <div class="container-fluid">
+      <a class="navbar-brand">SMMS</a>
+    </div>
+  </nav>
+  <nav class="navbar navbar-default shadowed-navbar" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="home">Dashboard</a></li>
+          <li><a href="feedback">Feedback</a></li>
+          <li><a href="kavachform">Kavach</a></li>
+          <li><a href="inspect">Joint Inspection</a></li> 
+          <li><a href="help">Help</a></li>
+          <li class="dropdown">
+            <a  class="dropdown-toggle" data-toggle="dropdown">Asset <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="kavachform">Kavach</a></li>
+                <li><a href="#">EI(GE elctronic)</a></li>
+                <li><a href="#">GGT MSDAC</a></li>
+                <li><a href="#">Sigma (Altpro) MSDAC</a></li>
+                <li><a href="#">Kawach</a></li>
+                <li><a href="#">EI (Siemens)</a></li>
+                <li><a href="#">Slinding Boom</a></li>
+                <li><a href="#">Fire Alarm</a></li>
+                <li><a href="#">MSDAC Medha</a></li>
+            </ul>
+        </li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    
+<div class=" container-fluid inspection-form">
+    <div class="inspection-details">
+        <div class="card">
+              <div class="card-header">
+                  <h4>Joint Inspection Points & Crossing Details</h4>
+              </div>
+              <div class="card-body">
+                  <label>Point & Crossing No.</label>
+                  <select id="PointNum" name="int_point_ID" [(ngModel)]="inspectionForm.int_point_ID" >
+                      <option  value="" disabled selected>Select Point Type</option>
+                   <option *ngFor="let category of pointDetail"  [value]="category.int_point_id">{{category.int_point_id}}</option>
+                  </select>
+                  <button (click)="TrackDetails()">Go</button>
+                  <button (click)="OpenModal()">P-Way</button>
+              </div>
+          </div>
+          </div>
+        <div class="container-fluid track-details">
+          <div class="card" >
+              <div class="card-header">
+                  <h4 class="card-title">Track Structure Details</h4>
+              </div>
+              <div class="card-body">
+                  <div class="col-sm-4">
+                      <label for="railway">Section/Station</label>
+                      <input type="text" class="form-control" id="railway" name="section" [(ngModel)]="Section" [disabled]="isInputDisabled" >
+    
+                      <label for="location">Location</label>
+                      <input type="text" class="form-control" id="location" name="location" [(ngModel)]="Location"  [disabled]="isInputDisabled" >
+                  </div>
+                  <div class="col-sm-4">
+                      <label for="division">Line/Loopline</label>
+                      <input type="text" class="form-control" id="division" name="division"  [disabled]="isInputDisabled">
+
+                      <label for="os">Operating Station</label>
+                      <input type="text" class="form-control" id="os" name="os" [(ngModel)]="Operating"  [disabled]="isInputDisabled">
+                  </div>
+                  <div class="col-sm-4">
+                      <label for="switchType">Switch Type</label>
+                      <input type="text" class="form-control" id="switchType" name="switch" [(ngModel)]="Switch" [disabled]="isInputDisabled" >
+                      
+                      <label for="inspectionDate">Inspection Date</label>
+                      <input type="date" class="form-control" id="inspectionDate" name="dt_inspection" [(ngModel)]="inspectionForm.inspectionDate" (change)="onDateInputChange($event)">
+                      
+                  </div>
+              </div>
+        </div> 
+       </div>
+       <div class="container-fluid signalinspection">
+        <div class="card" >
+            <div class="card-header">
+                <h4 class="card-title">Signal Inspection Details</h4>
+            </div>
+            <div class="card-body">
+                <div class="col-sm-4">
+                    <label for="railway">Name</label>
+                    <input type="text" class="form-control" id="railway" name="railway"  [(ngModel)]="receivedData[0].strusername"  [disabled]="isInputDisabled" >
+                </div>
+                <div class="col-sm-4">
+                    <label for="division">Designation</label>
+                    <input type="text" class="form-control" id="division" name="designation"  [(ngModel)]="receivedData[0].struserdesignation"  [disabled]="isInputDisabled">
+                </div>
+            </div>
+      </div> 
+    </div>
+
+ 
+    <div class="container-fluid SandT-form" >
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)"> 
+    <div class="row">
+          <div class="card-header">
+                <div class="row">
+                    <div class="col-md-1">S.No.</div>
+                    <div class="col-md-5">S&T Items Description</div>
+                    <div class="col-md-3">N to R</div>
+                    <div class="col-md-3">R to N</div>
+                </div>
+           </div>
+            
+         <div class="card-body">
+                <div class="row">
+                    <div class="card-header">
+                            <div class="col-md-1"><br/>1</div>
+                            <div class="col-md-11"><h5><br/>Condition of point machine and ground connection</h5></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>a. Whether point machine free from any obstruction (dust, rust or any foriegn material and corrosion)?</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <select  style="width: 300px;" class="card-text" name="str_free_obs"  id="PointNum" name="str_free_obst"  [(ngModel)]="inspectionForm.str_free_obs">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>b. Condition of ground connection and P bracket</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <select style="width: 300px;" class="card-text" id="PointNum" name="str_ground_pbracket" [(ngModel)]="inspectionForm.str_ground_pbracket">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>c. Condition of insulation povided with P bracket and Drive rod</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insulation_driverod_NR"  [(ngModel)]="inspectionForm.str_insulation_driverod_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insulation_driverod_RN" [(ngModel)]="inspectionForm.str_insulation_driverod_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>d. Lubrication of point (chair plate, slides & motor) upto 3 sleepers from the toe of the switch</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_lubr_3slepr_NR" [(ngModel)]="inspectionForm.str_lubr_3slepr_NR">
+                                    <option value=""disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_lubr_3slepr_RN" [(ngModel)]="inspectionForm.str_lubr_3slepr_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> e.Squareness of Ground connections</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <select style="width: 300px;" class="card-text" id="PointNum" name="str_square_grnd" [(ngModel)]="inspectionForm.str_square_grnd">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> f. Opening of switch (Std value 160±3mm)</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_open_switch_NR" [(ngModel)]="inspectionForm.str_open_switch_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Proper">Proper</option>
+                                    <option value="Need Adjustment">Need Adjustment</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_open_switch_RN" [(ngModel)]="inspectionForm.str_open_switch_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Proper">Proper</option>
+                                    <option value="Need Adjustment">Need Adjustment</option>
+                                </select>
+                            </div>
+                        </div>    
+                         <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>g. Condition of Clamp lock bracket, fish tail and other moving parts. (Total thickness of filler/shims provided is < 5mm)</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_clamp_lock_NR" [(ngModel)]="inspectionForm.str_clamp_lock_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_clamp_lock_RN" [(ngModel)]="inspectionForm.str_clamp_lock_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Poor">Poor</option>o
+                                </select>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="card-header">
+                            <div class="col-md-1"><br/>2</div>
+                            <div class="col-md-11"><h5><br/> Operation of point machine</h5></div>
+                     </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>a. Whether any unusual noise observed while operating ?</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <select  style="width: 300px;" class="card-text" id="PointNum" name="str_unusual_noise" [(ngModel)]="inspectionForm.str_unusual_noise">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-11">
+                                <p>b. Point obstruction test</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>(i). Without test piece</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_obs_test_without_piece_NR" [(ngModel)]="inspectionForm.str_obs_test_without_piece_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Pass">Pass</option>
+                                    <option value="Fail">Fail</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_obs_test_without_piece_RN" [(ngModel)]="inspectionForm.str_obs_test_without_piece_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Pass">Pass</option>
+                                    <option value="Fail">Fail</option>
+                                </select>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> (ii). with 5mm test piece</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_obs_test_with_5mm_NR" [(ngModel)]="inspectionForm.str_obs_test_with_5mm_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Pass">Pass</option>
+                                    <option value="Fail">Fail</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_obs_test_with_5mm_RN" [(ngModel)]="inspectionForm.str_obs_test_with_5mm_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Pass">Pass</option>
+                                    <option value="Fail">Fail</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> c. Time taken in completing the operation in second:</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p style="font-weight: bold"> Is within Limit ?</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p style="font-weight: bold">Is within Limit ?</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                             <p>  (i). Without test piece</p>
+                            </div>
+                            <div class="col-md-3">
+                                <input style="width: 30px;" type="text" id="seconds" name="int_tm_opr_completion_without_piece_NR" [(ngModel)]="inspectionForm.int_tm_opr_completion_without_piece_NR">
+                                <label for="sec">sec.</label>
+                                <select  class="card-text" id="PointNum" name="str_opr_completion_without_piece_NR" [(ngModel)]="inspectionForm.str_opr_completion_without_piece_NR">
+                                    <option value="" disabled selected>Is within Limit ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input  style="width: 30px;" type="text" id="seconds" name="int_tm_opr_completion_without_piece_RN" [(ngModel)]="inspectionForm.int_tm_opr_completion_without_piece_RN">
+                                <label for="sec">sec.</label>
+                                <select  class="card-text" id="PointNum" name="str_opr_completion_without_piece_RN" [(ngModel)]="inspectionForm.str_opr_completion_without_piece_RN">
+                                    <option value="" disabled selected>Is within Limit ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> (ii). with 5mm test piece</p>
+                            </div>
+                            <div class="col-md-3">
+                                <input style="width: 30px;" type="text" id="seconds" name="int_tm_opr_completion_with_5mm_NR" [(ngModel)]="inspectionForm.int_tm_opr_completion_with_5mm_NR">
+                                <label for="sec" name="int_tm_opr_completion_with_5mm_NR">sec.</label>
+                                <select  class="card-text" id="PointNum" name="str_opr_completion_with_5mm_NR" [(ngModel)]="inspectionForm.str_opr_completion_with_5mm_NR">
+                                    <option value="" disabled selected>Is within Limit ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                             <input  style="width: 30px;" type="text" id="seconds" name="int_tm_opr_completion_with_5mm_RN" [(ngModel)]="inspectionForm.int_tm_opr_completion_with_5mm_RN">
+                                <label for="sec">sec.</label>
+                                <select  class="card-text" id="PointNum" name="str_opr_completion_with_5mm_RN" [(ngModel)]="inspectionForm.str_opr_completion_with_5mm_RN">
+                                    <option value="" disabled selected>Is within Limit ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>d. Whether pin snug fit in P bracket and ground connection without hammering</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_pin_snug_NR" [(ngModel)]="inspectionForm.str_pin_snug_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_pin_snug_RN"  [(ngModel)]="inspectionForm.str_pin_snug_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-header">
+                            <div class="col-md-1"><br/>3</div>
+                            <div class="col-md-11"><h5><br/>Condition of insulation provided with:</h5></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>a. Ground connection</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insl_with_grnd_NR" [(ngModel)]="inspectionForm.str_insl_with_grnd_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Planned Repair">Planned Repair</option>
+                                    <option value="Immediate Repair">Immediate Repair</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insl_with_grnd_RN"  [(ngModel)]="inspectionForm.str_insl_with_grnd_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Planned Repair">Planned Repair</option>
+                                    <option value="Immediate Repair">Immediate Repair</option>>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>b. P brackett</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insl_with_pbracket_NR"  [(ngModel)]="inspectionForm.str_insl_with_pbracket_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Planned Repair">Planned Repair</option>
+                                    <option value="Immediate Repair">Immediate Repair</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insl_with_pbracket_RN"  [(ngModel)]="inspectionForm.str_insl_with_pbracket_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Planned Repair">Planned Repair</option>
+                                    <option value="Immediate Repair">Immediate Repair</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>c. Drive bar</p>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insl_with_drivebar_NR" [(ngModel)]="inspectionForm.str_insl_with_drivebar_NR">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Planned Repair">Planned Repair</option>
+                                    <option value="Immediate Repair">Immediate Repair</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select  class="card-text" id="PointNum" name="str_insl_with_drivebar_RN"  [(ngModel)]="inspectionForm.str_insl_with_drivebar_RN">
+                                    <option value="" disabled selected>Select One</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Planned Repair">Planned Repair</option>
+                                    <option value="Immediate Repair">Immediate Repair</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <div class="row">
+                <div class="card-header">
+                    <div class="col-md-1"><br/>4</div>
+                    <div class="col-md-5"><h5><br/>Defects (other than above) require to be attended, if any</h5></div>
+                  </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <p> <input  style="width: 750px;" type="text" id="defects" name="str_defect"  [(ngModel)]="inspectionForm.str_defect"></p>
+                   </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="card-header">
+                    <div class="col-md-1"><br/>5</div>
+                    <div class="col-md-5"><h5><br/>Remarks/Observations, if any</h5></div>
+                  </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <p> <input style="width: 750px;" type="text" id="remarks" name="str_rmrk" [(ngModel)]="inspectionForm.str_rmrk"></p>
+                   </div>
+                </div>
+              </div>  
+              <button type="submit" class="submit-button btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+    </div>
+
+</div>    

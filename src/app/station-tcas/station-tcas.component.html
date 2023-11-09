@@ -1,0 +1,269 @@
+<div class="form-card">
+  <form [formGroup]="PowerSupplyform">
+    <div class="form-group">
+      <h3>STCAS Power supply card:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_STCAS_ps_card_COUNT" style="width: 60px; height: 40px;" formControlName="int_STCAS_ps_card_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div>
+    <div formArrayName="entries">
+   <!--    <div *ngFor="let item of getPowerSupplyQuantityArray(); let i=index"> -->
+    <div *ngFor="let item of PowerSupplyentries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">Spec</label>
+          <select id="{{'str_kawach_card_spec'+i}}" formControlName='str_kawach_card_spec'>
+            <option value="spec1">Spec 1</option>
+            <option value="spec2">Spec 2</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">Range of Output</label>
+          <input type="text" id="{{'str_kawach_card_range_of_output'+i}}" formControlName='str_kawach_card_range_of_output'>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </form>
+   </div>
+
+
+<div class="form-card">
+  <form [formGroup]="stcasModemform">
+    <div class="form-group">
+      <h3>STCAS MODEM card:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_STCAS_modem_card_COUNT" style="width: 60px; height: 40px;" formControlName="int_STCAS_modem_card_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div> 
+    <div formArrayName="entries">
+<!--       <div *ngFor="let item of getstcasModemQuantityArray(); let i=index"> -->
+  <div *ngFor="let item of stcasModementries.controls; let i = index">
+   <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="form-card">
+  <form [formGroup]="VitalComputerform">
+    <div class="form-group">
+      <h3>Vital Computer card:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_vital_comp_card_COUNT" style="width: 60px; height: 40px;" formControlName="int_vital_comp_card_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div>
+    <div formArrayName="entries">
+     <!--  <div *ngFor="let item of getVitalComputerQuantityArray(); let i=index"> -->
+      <div *ngFor="let item of VitalComputerentries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="form-card">
+  <form [formGroup]="Communicationform">
+    <div class="form-group">
+      <h3>Communication Interface Module:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_comm_intr_mod_COUNT" style="width: 60px; height: 40px;" formControlName="int_comm_intr_mod_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div>
+    <div formArrayName="entries">
+    <!--   <div *ngFor="let item of getCommunicationQuantityArray(); let i=index"> -->
+      <div *ngFor="let item of Communicationentries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="form-card">
+  <form [formGroup]="EventLoggerform">
+    <div class="form-group">
+      <h3>Event Logger Module:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_event_logger_mod_COUNT" style="width: 60px; height: 40px;" formControlName="int_event_logger_mod_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div>
+    <div formArrayName="entries">
+<!--       <div *ngFor="let item of getEventLoggerQuantityArray(); let i=index"> -->
+  <div *ngFor="let item of EventLoggerentries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="form-card">
+  <form [formGroup]="VitalInputform">
+    <div class="form-group">
+      <h3>Vital Input Card:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_vital_ip_card_COUNT" style="width: 60px; height: 40px;" formControlName="int_vital_ip_card_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions1" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div>
+    <div formArrayName="entries">
+  <!--     <div *ngFor="let item of getVitalInputQuantityArray(); let i=index"> -->
+    <div *ngFor="let item of VitalInputentries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="form-card">
+  <form [formGroup]="Modemform">
+    <div class="form-group">
+      <h3>MODEM:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_modem_COUNT" style="width: 60px; height: 40px;" formControlName="int_modem_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div>
+    <div formArrayName="entries">
+      <!-- <div *ngFor="let item of getModemQuantityArray(); let i=index"> -->
+        <div *ngFor="let item of Modementries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0">Sl No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">Range of communication</label>
+          <input type="text" id="{{'str_kawach_card_roc'+i}}" formControlName='str_kawach_card_roc'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">Power Supply</label>
+          <input type="text" id="{{'int_kawach_card_ps'+i}}" formControlName='int_kawach_card_ps'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0">Working frequency</label>
+          <input type="text" id="{{'int_kawach_card_workng_freq'+i}}" formControlName='int_kawach_card_workng_freq'>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </form>
+</div> 
+
+
+<!-- <button type="submit" class="submit-button" (click)="onSubmit()">Next</button> -->

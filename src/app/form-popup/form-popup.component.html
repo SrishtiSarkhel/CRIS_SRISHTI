@@ -1,0 +1,99 @@
+<!-- modal-content.component.html -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Admin Action Details</h3>
+      <button type="button" class="close" (click)="closeModal()" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <div class="modal-body">
+        <div class="form-row">
+            <div class="field">
+              <label for="Zone" >Zone</label>
+              <input type="text" name="strzonecode"  [(ngModel)]="Zone" [disabled]="isInputDisabled"  >
+            </div>
+            <div class="field">
+              <label for="SubModule">Division</label>
+              <input type="text" name="strdivisioncode"   [(ngModel)]="Division" [disabled]="isInputDisabled" > 
+            </div>
+            <div class="field">
+              <label for="feedback">User</label>
+              <input type="text"  name="struserid" [(ngModel)]="User" [disabled]="isInputDisabled">
+            </div>
+            <div class="field">
+                <label for="section">Contact</label>
+                <input type="text" name="numbmobilenumber" [(ngModel)]="Contact" [disabled]="isInputDisabled" >
+              </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="Zone" >Module</label>
+              <input type="text"  name="module" [(ngModel)]="SubModule" [disabled]="isInputDisabled" >
+            </div>
+            <div class="field">
+              <label for="SubModule">SubModule</label>
+              <input type="text" name="submodule" [(ngModel)]="SubModule" [disabled]="isInputDisabled"> 
+            </div>
+            <div class="field">
+              <label for="feedback">Feedback Type</label>
+              <input type="text" name="strfeedbackremark" [(ngModel)]="Feedbacktype" [disabled]="isInputDisabled" >
+            </div>
+            <div class="field">
+                <label for="section">Status</label>
+                <input type="text" name="status" [(ngModel)]="Status" [disabled]="isInputDisabled"  >
+              </div>
+          </div>
+          <br>
+
+          <div class="feedback-table">
+            <table class="table table-striped table-bordered table-hover">
+               <thead class="table-info">
+                    <tr>
+                      <th>User Remark</th>
+                      <th>Reporting Time</th>
+                      <th>Cris Remark</th>
+                      <th>Cris Reply</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let entry of tableform ">
+                      <td>{{entry.strfeedbackremark}}</td>
+                      <td>{{ entry.dtreportedontime | date:'dd-MM-yyyy' }}</td>
+                      <td>{{ entry.strcrisremark }}</td>
+                      <td>{{ entry.dtcrisremarkon | date:'dd-MM-yyyy' }}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="remark">Remark</label>
+        <textarea id="remark" name="strFeedbackRemark" rows="4" [(ngModel)]="SelectedRemark"></textarea>
+        <div *ngIf="formSubmitted && !SelectedRemark" style="color: red;" class="error-message">Please enter data in this field</div>  
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn "  data-dismiss="modal">
+        <select  name="statusreply" [(ngModel)]="Statusmarked">
+          <option value="" disabled selected>Select Status</option>
+          <option value="2">In progress</option>
+          <option value="3">Resolved</option>
+          <option value="4">Accepted</option>
+          <option value="5">Not feasible</option>
+          <option value="6">Closed</option>
+        </select>
+        <div *ngIf="formSubmitted && !Statusmarked" style="color: red;" class="error-message">Please select an option</div>  
+      </button>
+      <button type="button" class="btn btn-primary" (click)="reply()" data-dismiss="modal">Reply</button>
+      <button type="button" class="btn btn-secondary" (click)="closeModal()" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+
+  
+  
+  

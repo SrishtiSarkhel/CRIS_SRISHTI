@@ -1,0 +1,177 @@
+.custom-navbar {
+    margin: 0;
+    padding: 0;
+    }
+    .navbar-brand{
+    font-weight:400;
+    font-size: 30px;
+    }
+    /* Top navigation bar */
+    .custom-navbar-blue {
+    background-color: #2E4374; 
+    height: 70px;
+    border-radius: 0;
+    }
+    
+    .custom-navbar-blue .navbar-brand {
+    color: white; 
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    }
+    
+    /* Second Navbar (White) */
+    /* Style the anchor elements inside the navbar */
+    .navbar-default .navbar-nav > li > a {
+    color: black; 
+    font-size: 18px; /* Set font size to 20px */
+    margin: 0; /* Remove any margin */
+    }
+    .navbar-default .navbar-nav{
+    margin-left: -180px;
+    
+    }
+    .navbar-default{
+    background-color: #4477CE; 
+    border:none;
+    border-radius: 0;
+    }
+    .shadowed-navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow with specific values */
+    }
+    
+    a:hover{
+    cursor: pointer;
+    
+    }
+  
+  .dashboard_body{
+    background-color: #EEEEEE;
+    height: 100vh;
+  }
+  .custom-navbar {
+  margin: 0;
+  padding: 0;
+  }
+  .navbar-brand{
+  font-weight:400;
+  font-size: 30px;
+  }
+  /* Top navigation bar */
+  .custom-navbar-blue {
+    background-color: #3b5183; 
+    height: 70px;
+    border-radius: 0;
+    }
+    
+    .custom-navbar-blue .navbar-brand {
+    color: white; 
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    }
+    
+    /* Second Navbar (White) */
+    /* Style the anchor elements inside the navbar */
+    .navbar-default .navbar-nav > li > a {
+    color: black; 
+    font-size: 18px; /* Set font size to 20px */
+    margin: 0; /* Remove any margin */
+    }
+    .navbar-default .navbar-nav{
+    margin-left: -180px;
+    
+    }
+    .navbar-default{
+    background-color: lightblue;
+    border:none;
+    border-radius: 0;
+    }
+  .shadowed-navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow with specific values */
+  }
+  
+  a:hover{
+  cursor: pointer;
+  
+  }
+
+
+.inspection-details{
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    }
+    
+   .track-details{
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+   } 
+    
+    label {
+    margin-right: 10px;
+    font-weight: normal;
+    }
+    
+    select {
+    margin-right: 10px; 
+    }
+    
+    button {
+    margin-right: 10px; 
+    }
+    
+    .card {
+    margin-left: 0 auto;
+    }
+    
+    .card-header{
+    background-color: lightblue;
+    }
+    .bordered-card {
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    }
+   
+    .card-title1 {
+    background-color: lightblue;
+    text-align: center;
+    margin-bottom: auto;
+    } 
+    
+    .SandT-form{
+    margin-top: 10px;
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    }
+
+    .card-body1{
+        border: 2px solid red;
+    }
+    .row1{
+        border: 2px green ; 
+    }
+    
+    .card-body2{
+        border: 1px solid blue;  
+    }
+
+    .card-text{
+        font-size: 14px;
+        width:200px;
+    }
+
+    .signalinspection{
+        margin-top: 10px;
+        max-width: 1900px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;  
+    }
+
+ 

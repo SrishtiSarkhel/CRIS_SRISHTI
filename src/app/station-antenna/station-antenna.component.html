@@ -1,0 +1,42 @@
+<div class="form-card">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <h3 style="margin-top: 0%;">
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+        <select id="int_stn_antenna_COUNT" style="width: 60px; height: 40px;" formControlName="int_stn_antenna_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+<!--         <div *ngFor="let item of getQuantityArray(); let i=index" > -->
+      <div *ngFor="let item of entries.controls; let i = index">
+          <div [formGroupName]="i">
+          <div class="form-row">
+            <div class="form-group">
+              <label *ngIf="i === 0" >Frequency Band</label>
+              <input type="text" id="{{'int_stn_antenna_freq_band'+i}}" [formControlName]="'int_stn_antenna_freq_band'">            
+            </div>
+            <div class="form-group">
+              <label *ngIf="i === 0">Input Impedance</label>
+              <input type="text"id="{{'int_stn_antenna_ip_impd'+i}}" [formControlName]="'int_stn_antenna_ip_impd'">
+            </div>
+    
+            <div class="form-group">
+              <label *ngIf="i === 0" for="gain">Gain</label>
+              <input type="text" id="{{'int_stn_antenna_gain'+i}}" [formControlName]="'int_stn_antenna_gain'">
+            </div>
+    
+            <div class="form-group">
+              <label *ngIf="i === 0" for="polarization">Polarization</label>
+              <input type="text" id="{{'int_stn_antenna_polar'+i}}" [formControlName]="'int_stn_antenna_polar'">
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </form>
+<!--      <button type="submit" class="submit-button" (click)="onSubmit();">Next</button> -->
+</div>
+   
+    

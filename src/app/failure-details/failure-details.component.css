@@ -1,0 +1,245 @@
+.dashboard_body{
+    background-color: #EEEEEE;
+    height: 100vh;
+}
+.custom-navbar {
+  margin: 0;
+  padding: 0;
+}
+.navbar-brand{
+  font-weight:400;
+  font-size: 30px;
+}
+/* Top navigation bar */
+.custom-navbar-blue {
+  background-color:#A73121; 
+  height: 70px;
+  border-radius: 0;
+}
+
+.custom-navbar-blue .navbar-brand {
+  color: white; 
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* Second Navbar (White) */
+/* Style the anchor elements inside the navbar */
+.navbar-default .navbar-nav > li > a {
+  color: white; 
+  font-size: 18px; /* Set font size to 20px */
+  margin: 0; /* Remove any margin */
+}
+.navbar-default .navbar-nav{
+  margin-left: -180px;
+  
+}
+.navbar-default{
+  background-color: #ff9c00; 
+  border:none;
+  border-radius: 0;
+}
+.shadowed-navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow with specific values */
+}
+.custom-navbar {
+  margin: 0;
+  padding: 0;
+}
+.navbar-brand{
+  font-weight:400;
+  font-size: 30px;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.form-card {
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    padding: 20px;
+    margin: 20px;
+    /* background-color: #f5f5f5; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+   
+  }
+  
+  .form-heading{
+    text-align: left;
+    margin-left: 3px;
+    font-weight: 500;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* width: 1000px; */
+
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    
+  }
+
+  .label-for-select{
+      width: 220px; 
+      margin-left: 40px;
+
+  }
+  .feedback-form {
+    width:80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    
+  }
+  .feedback-table {
+    margin-top: 20px;
+  }
+
+  .table-container {
+    margin-top: 30px; /* Adjust margin-top as needed */
+    overflow: auto;
+    height: 200px;
+
+  }
+  
+  /* Style for the table container */
+.table-container {
+    max-height: 400px; /* Set a maximum height to enable scrolling */
+    overflow: auto; /* Enable vertical scrolling within the container */
+  }
+  
+  /* Style for the table itself */
+  table {
+    width: 100%; /* Make the table fill its container's width */
+    border-collapse: collapse;
+  }
+  
+  /* Style for table header row */
+  thead {
+    color: black; /* Header text color */
+  }
+  
+  /* Style for table header cells */
+  
+.table-info th {
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  background-color:#ff9c00;
+  font-weight: 500;
+  color: white;
+}
+  
+  
+  /* Style for table body cells */
+  td {
+    padding: 10px; /* Add padding to the cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ccc; /* Add a border to the cells */
+  }
+  
+  /* Style for the options within the select */
+  .submit-button {
+    font-size:15px;
+    font-family:Arial;
+    width:120px;
+    height:50px;
+    border-width:1px;
+    color:white;
+    border-color: white;
+    border-top-left-radius:26px;
+    border-top-right-radius:26px;
+    border-bottom-left-radius:26px;
+    border-bottom-right-radius:26px;
+    background:#ff9c00;
+    margin-right:130px;
+    display: inline-block;
+    
+  }
+
+  /* Style for the select element */
+#Zonetype {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 40px;
+  margin-left: 40px;
+  border-color:#ff9c00;
+  box-shadow: 0 0 10px rgba(32, 31, 30, 0.3);
+} 
+  
+  #Zonetype option {
+    padding: 5px;
+  }
+  
+  /* Style for the selected option */
+  #Zonetype option:checked {
+    background-color: #007bff;
+    color: #fff;
+  }
+  /* Style for the select element */
+#Divisiontype {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 38px;
+    border-color: #ff9c00;
+    box-shadow: 0 0 10px rgba(32, 31, 30, 0.3);
+}
+  
+  /* Style for the options within the select */
+  #Divisiontype option {
+    padding: 5px;
+  }
+  
+  /* Style for the selected option */
+  #Divisiontype option:checked {
+    background-color: #007bff;
+    color: #fff;
+  }
+  #category
+  {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 38px;
+    border-color: #FB8B23;
+    box-shadow: 0 0 10px rgba(32, 31, 30, 0.3);
+  }
+
+  /* CSS for the enhanced input */
+.enhanced-input {
+  width: 200px; /* Set the desired width */
+  height: 35px; /* Set the desired height */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+  /* padding: 10px; Add padding for content spacing */
+  font-size: 16px; /* Set the font size */
+  border-radius: 5px; /* Add rounded corners if desired */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-color: #FB8B23;
+}
+h3{
+  margin-left: 20px;
+  padding: 20px;
+}

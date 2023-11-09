@@ -1,0 +1,25 @@
+.card-header{
+    background-color: lightblue;
+ }
+
+ .card-body{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    margin: 0;
+ }
+
+ .SandT-form{
+    margin-top: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid  #ccc;
+}
+
+.modal-body {
+ max-height: 800px;
+overflow-y: auto;
+max-width: 1800px;
+ }
+    

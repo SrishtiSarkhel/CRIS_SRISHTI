@@ -1,0 +1,101 @@
+/* Style for the tab buttons */
+.custom-navbar {
+  margin: 0;
+  padding: 0;
+  }
+  .navbar-brand{
+  font-weight:400;
+  font-size: 30px;
+  }
+  /* Top navigation bar */
+  .custom-navbar-blue {
+    background-color: #3b5183; 
+    height: 70px;
+    border-radius: 0;
+    }
+    
+    .custom-navbar-blue .navbar-brand {
+    color: white; 
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    }
+    
+    /* Second Navbar (White) */
+    /* Style the anchor elements inside the navbar */
+    .navbar-default .navbar-nav > li > a {
+    color: black; 
+    font-size: 18px; /* Set font size to 20px */
+    margin: 0; /* Remove any margin */
+    }
+    .navbar-default .navbar-nav{
+    margin-left: -180px;
+    
+    }
+    .navbar-default{
+    background-color: lightblue;
+    border:none;
+    border-radius: 0;
+    }
+  .shadowed-navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow with specific values */
+  }
+  
+  a:hover{
+  cursor: pointer;
+  
+  }
+.tab-buttons {
+    display: flex;
+    margin-bottom: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  }
+  
+  .tab-button {
+    flex: 1;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #4285f4; /* Default text color is blue */
+    font-size: 16px;
+    transition: transform 0.3s, color 0.3s, background-color 0.3s;
+    border: 2px solid transparent; /* Add a transparent border */
+    border-radius: 20px; /* Add rounded borders */
+    margin: 10px 10px 0; /* Add margin on top and space between buttons */
+    background-color: transparent; /* Remove background color */
+  }
+  
+  .tab-button:hover {
+    /* Background color on hover */
+    background-color: #f1f1f1;
+  }
+  
+  /* Style for the selected tab button */
+  .tab-button.selected {
+    background-color: transparent; /* Remove background color */
+    color: #4285f4; /* Selected text color is blue */
+    transform: translateY(-4px); /* Float effect */
+    font-weight: bold;
+    border-color: #4285f4; /* Border color for the selected tab */
+  }
+
+  /* Style for the form actions (submit buttons) */
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .btn {
+    margin: 0 10px;
+  }
+  
+  
+

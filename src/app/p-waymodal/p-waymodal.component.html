@@ -1,0 +1,744 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">P-Way Items</h3>
+      <button type="button"  class="close"  (click)="closeModal()" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>      
+    </div>
+
+    <div class="modal-body">
+        <div class="container-fluid SandT-form" > 
+            <div class="row">
+                  <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-1">S.No.</div>
+                            <div class="col-md-5">P-Way Items Description</div>
+                            <div class="col-md-3">Left </div>
+                            <div class="col-md-3">Right </div>
+                        </div>
+                   </div>       
+                 <div class="card-body">
+                        <div class="row">
+                            <div class="card-header">
+                                    <div class="col-md-1"><br/>1</div>
+                                    <div class="col-md-11"><h5><br/>Condition of Sleeper</h5></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p>a. Two Machine Sleeper</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                         <p> <input type="text" id="remarks" name="str_rmrk" [(ngModel)]="pwaydsiplay.str_2mach_sleeper_l"  [disabled]="isInputDisabled" ></p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks" name="str_rmrk" [(ngModel)]="pwaydsiplay.str_2mach_sleeper_r" [disabled]="isInputDisabled" ></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p>b. Two SRJ Sleeper</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_2srj_sleepr_l"   name="str_rmrk" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> <input type="text" id="remarks"   [(ngModel)]="pwaydsiplay.str_2srj_sleepr_r"  name="str_rmrk" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p>c. SSD Sleeper</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_ssd_sleeper_l"  name="str_rmrk" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_ssd_sleeper_r"  name="str_rmrk" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="row">
+                             <div class="card-header">
+                                    <div class="col-md-1"><br/>2</div>
+                                    <div class="col-md-11"><h5><br/>Condition of Ballast & Drainage</h5></div>
+                             </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p> a. Ballast Clearance below rail bottom (Should be > 50mm)</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_ballast_l" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_ballast_r" name="str_rmrk" [disabled]="isInputDisabled"> </p>
+                                   </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p> b. Drainage condition in switch portion</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_drainage_l" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_drainage_r" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card-header">
+                                    <div class="col-md-1"><br/>3</div>
+                                    <div class="col-md-11"><h5><br/>Switch Assembly</h5></div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p>a.Condition of stock rail</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.str_cond_stock_l" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.str_cond_stock_r" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p>b.Condition of tongue rail</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.str_cond_tongue_l"  [disabled]="isInputDisabled"></p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.str_cond_tongue_r" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p>c. Lateral wear of stock rail (Limit: For 60kg- 8mm, For 52kg- 6mm)</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>
+                                             <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.int_lateral_stock_l" [disabled]="isInputDisabled">
+                                             <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                        </p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> 
+                                        <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.int_lateral_stock_r" [disabled]="isInputDisabled">
+                                        <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                      </p>
+                                   </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p> d. Vertical wear of stock rail (Limit: For 60kg- 8mm, For 52kg- 5mm)</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>
+                                             <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.int_vertical_stock_l" [disabled]="isInputDisabled">
+                                             <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                        </p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> 
+                                        <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.int_vertical_stock_r" [disabled]="isInputDisabled">
+                                        <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                      </p>
+                                   </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <p>e. If SRJ is welded as per RDSO drg.</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p> <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.str_srj_welded_l" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                   <div class="col-md-3">
+                                       <p> <input type="text" id="remarks" name="str_rmrk"  [(ngModel)]="pwaydsiplay.str_srj_welded_r" [disabled]="isInputDisabled"></p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                      <div class="row">
+                        <div class="card-header">
+                            <div class="col-md-1"><br/>4</div>
+                            <div class="col-md-5"><h5><br/>Condition of fittings of switch assembly</h5></div>
+                          </div>
+                        <div class="card-body">
+                            <div class="row">
+                           </div>
+                           <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> a. Slide chairs</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_chairs_l" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_chairs_r" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> b. Gauge Tie Plate</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_gauge_l" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_gauge_r" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>c. Nut Bolts and Spring Washer</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_nut_washer_l" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_nut_washer_r" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="card-header">
+                            <div class="col-md-1"><br/>5</div>
+                            <div class="col-md-5"><h5><br/>Missing/Displaced / broken/ crushed fittings Total for stock rail holding:</h5></div>
+                          </div>
+                        <div class="card-body">
+                            <div class="row">
+      
+                           </div>
+                           <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> a. Liners</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.int_liners_l" name="str_rmrk" [disabled]="isInputDisabled">
+                                    <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> 
+                                </p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_liners_r" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> </p>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> b. ERC</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_erc_l" name="str_rmrk" [disabled]="isInputDisabled">
+                                    <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> 
+                                </p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_erc_r" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> </p>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>c.Rubber pad on sleepers</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_rubber_pad_l" name="str_rmrk" [disabled]="isInputDisabled">
+                                    <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> 
+                                </p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_rubber_pad_r" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> </p>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>d. Spring loaded key on slide chair</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_spring_load_l" name="str_rmrk" [disabled]="isInputDisabled">
+                                    <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> 
+                                </p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_spring_load_r"  name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> </p>
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p> e. Cotter wedges of chair plates</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_cotter_wedge_l" name="str_rmrk" [disabled]="isInputDisabled">
+                                    <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> 
+                                </p>
+                           </div>
+                           <div class="col-md-3">
+                               <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_cotter_wedge_r" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="nos" style="font-weight:normal; font-size: small;">nos.</label> </p>
+                           </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"><br/>6</div>
+                        <div class="col-md-5"><h5><br/>Tongue rail flange hole condition</h5></div>
+                        <div class="col-md-3">
+                            <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_tongue_rail_flang_l" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> <input type="text" id="remarks"   [(ngModel)]="pwaydsiplay.str_tongue_rail_flang_r"  name="str_rmrk" [disabled]="isInputDisabled"></p>
+                       </div>
+                        <!-- <div class="card-header">
+                            <div class="col-md-1"><br/>6</div>
+                            <div class="col-md-5"><h5><br/>Tongue rail flange hole condition</h5></div>
+                          </div> -->
+                       <!--  <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_tongue_rail_flang_l" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                               </div>
+                               <div class="col-md-3">
+                                   <p> <input type="text" id="remarks"   [(ngModel)]="pwaydsiplay.str_tongue_rail_flang_r"  name="str_rmrk" [disabled]="isInputDisabled"></p>
+                               </div>
+                           </div>
+                        </div> -->
+                      </div>  
+                      <div class="row">
+                        <div class="card-header">
+                            <div class="col-md-1"><br/>7</div>
+                            <div class="col-md-5"><h5><br/>Indicate no. of sleepers upto which switch is housing properly</h5></div>
+                          </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5">
+                                <p> <input  type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_indicate_no"  name="str_rmrk" [disabled]="isInputDisabled"  >
+                                <label for="nos." style="font-weight:normal; font-size: small;">nos.</label>
+                                </p>
+                             </div>
+                           </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="card-header">
+                            <div class="col-md-1"><br/>8</div>
+                            <div class="col-md-5"><h5><br/>Whether tongue rail resting on slide chairs, when set with stock rail ?</h5></div>
+                          </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_tongue_slide_chair_l"  name="str_rmrk" [disabled]="isInputDisabled"></p>
+                               </div>
+                               <div class="col-md-3">
+                                   <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_tongue_slide_chair_r"  name="str_rmrk" [disabled]="isInputDisabled"></p>
+                               </div>
+                           </div>
+                        </div>
+                      </div>
+                 <div class="row">
+                    <div class="card-header">
+                        <div class="col-md-1"><br/>9</div>
+                        <div class="col-md-5"><h5><br/>Squareness of the</h5></div>
+                      </div>
+                    <div class="card-body">
+                        <div class="row">
+  
+                       </div>
+                       <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p> a. Toe of switch (Limit: < 10mm)</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_toe_switch_l" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_toe_switch_r"  name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p>  b. Point machine sleeper (Limit: < 10mm)</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.int_point_machine_sleeper_l"  name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> <input type="text" id="remarks"  [(ngModel)]="pwaydsiplay.int_point_machine_sleeper_r"  name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> </p>
+                       </div>
+                    </div>
+                </div>
+             </div>   
+              <div class="row">
+                        <div class="card-header">
+                            <div class="col-md-1"><br/>10</div>
+                            <div class="col-md-5"><h5><br/>Squareness of the</h5></div>
+                          </div>
+                        <div class="card-body">
+                            <div class="row">
+                           </div>
+                           <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>a. Packing under switch assembly</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                            <p> <input  type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_pack_under_switch" name="str_rmrk" [disabled]="isInputDisabled" ></p>
+                         </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>b. Date of Last UNIMAT Packing</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                            <p> <input  type="text" id="remarks" [(ngModel)]="pwaydsiplay.dt_last_unimat" name="str_rmrk" [disabled]="isInputDisabled" ></p>
+                         </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <p>c. Whether ground connection opened at the time of Last UNIMAT packing ?</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                            <p> <input  type="text" id="remarks"  [(ngModel)]="pwaydsiplay.str_ground_conn" name="str_rmrk" [disabled]="isInputDisabled" > </p>
+                         </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div class="card-header">
+                        <div class="col-md-1"><br/>11</div>
+                        <div class="col-md-5"><h5><br/>Gauge & Cross level</h5></div>
+                      </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p> 
+                              <label for="mm" style="font-weight:bold;">Is within Limit ? </label> 
+                                </p>
+                           </div>
+                           <div class="col-md-3">
+                               <p>
+                                <label for="mm" style="font-weight:bold;">Is within Limit ? </label>
+                            </p>
+                           </div>
+                       </div>
+                       <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p>a. Gauge at Toe of switch</p>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p> 
+                                <input  style="width: 20px;"  [(ngModel)]="pwaydsiplay.int_gauge_toe"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_gauge_toe" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p> b. Cross Level at Toe of switch</p>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p> 
+                                <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_cross_level"   type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_cross_level"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p>   c. Gauge at 150mm from Toe towards SR</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> 
+                                <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_gauge_150_l" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                <input  style="width: 100px;"[(ngModel)]="pwaydsiplay.str_gauge_150_l" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> 
+                            <input  style="width: 20px;"[(ngModel)]="pwaydsiplay.int_gauge_150_r"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            <input  style="width: 100px;"[(ngModel)]="pwaydsiplay.str_gauge_150_r" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                        </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p> d. Cross level at 150mm from Toe towards SR</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> 
+                                <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_cross_150_l"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_cross_150_l" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> 
+                            <input  style="width: 20px;"  [(ngModel)]="pwaydsiplay.int_cross_150_r" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_cross_150_r"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                        </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p>  e. Gauge at 5th Sleeper</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> 
+                                <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_gauge_5th_l"   type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_gauge_5th_l"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> 
+                            <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_gauge_5th_r"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_gauge_5th_r" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                        </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p>  f. Cross level at 5th Sleeper</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> 
+                                <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_cross_5th_l"   type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                                <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_cross_5th_l"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> 
+                            <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_cross_5th_r" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_cross_5th_r"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                        </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p>  g. Gauge at 9th Sleeper</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> 
+                                <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_gauge_9th_l"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;"> mm </label> 
+                                <input  style="width: 100px;"[(ngModel)]="pwaydsiplay.str_gauge_9th_l" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> 
+                            <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_gauge_9th_r"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_gauge_9th_r"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                        </p>
+                       </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <p> h. Cross level at 9th Sleeper</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p> 
+                                <input  style="width: 20px;"  [(ngModel)]="pwaydsiplay.int_cross_9th_l"  type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                                <label for="mm" style="font-weight:normal; font-size: small;" >mm</label> 
+                                <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_cross_9th_l" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            </p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> 
+                            <input  style="width: 20px;" [(ngModel)]="pwaydsiplay.int_cross_9th_r" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                            <label for="mm" style="font-weight:normal; font-size: small;">mm</label> 
+                            <input  style="width: 100px;" [(ngModel)]="pwaydsiplay.str_cross_9th_r" type="text" id="remarks" name="str_rmrk" [disabled]="isInputDisabled">
+                        </p>
+                       </div>
+                    </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="card-header">
+                    <div class="col-md-1"><br/>12</div>
+                    <div class="col-md-5"><h5><br/>Lubrication of slide chairs and assembly beyond 3 sleepers from the toe of switch</h5></div>
+                  </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p> <input type="text" [(ngModel)]="pwaydsiplay.str_lubr_slide_chair_l" id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                       </div>
+                       <div class="col-md-3">
+                           <p> <input type="text"  [(ngModel)]="pwaydsiplay.str_lubr_slide_chair_r"  id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                       </div>
+                   </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="card-header">
+                    <div class="col-md-1"><br/>13</div>
+                    <div class="col-md-5"><h5><br/>Switch setting device (SSD)</h5></div>
+                  </div>
+                <div class="card-body">
+                    <div class="row">
+                   </div>
+                   <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p>a. Whether distance between gauge faces of stock rail at JOH (1745±2mm for 60 kg switch and 1745±2mm for 52 kg switch) ?</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> <input type="text" [(ngModel)]="pwaydsiplay.str_dist_btwn_gauge" id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> b. Whether open side clearance at JOH (57mm or more) ?</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p> <input type="text"  [(ngModel)]="pwaydsiplay.str_open_side_l"  id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                   <div class="col-md-3">
+                       <p> <input type="text" [(ngModel)]="pwaydsiplay.str_open_side_r"  id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p>  c. Whether greasing and lubrication of moving parts inside of cover of SSD is being done every month ?</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> <input type="text"   [(ngModel)]="pwaydsiplay.str_grease_lubr"   id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p>  d. Insulation condition</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> <input type="text"  [(ngModel)]="pwaydsiplay.str_insulation_cond"   id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p>  e. Squareness of arms, condition of base plate, Gap between bolt & Stopper of SSD (Both arms should be Straight Alignment)</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_square_arms" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p>f. Tightness of nut bolts and other fittings</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> <input type="text"  [(ngModel)]="pwaydsiplay.str_tightness_nut" id="remarks" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> g. Location and Position of SSD (As per RDSO drg.)</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_locn_pos" name="str_rmrk" [disabled]="isInputDisabled"></p>
+                   </div>
+                </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="card-header">
+                <div class="col-md-1"><br/>14</div>
+                <div class="col-md-5"><h5><br/>Defects (other than above) require to be attended, if any</h5></div>
+              </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_pway_defects" name="str_rmrk" [disabled]="isInputDisabled" style="width:700px"></p>
+               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card-header">
+                <div class="col-md-1"><br/>15</div>
+                <div class="col-md-5"><h5><br/>Remarks/Observations, if any</h5></div>
+              </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <p> <input type="text" id="remarks" [(ngModel)]="pwaydsiplay.str_pway_rmrk" name="str_rmrk"  [disabled]="isInputDisabled" style="width:700px"></p>
+               </div>
+            </div>
+          </div> 
+       </div>
+     </div>
+ </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  (click)="closeModal()" >Close</button>  
+    </div>
+  </div>

@@ -1,0 +1,124 @@
+
+<div class="form-card" >
+  <form [formGroup]="myform">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="int_asset_code">Asset Code</label>
+        <input type="text" id="int_asset_code" style="width: 90%;" formControlName="int_asset_code" />
+      </div>
+      <div class="form-field">
+        <label for="int_RFID">RFID</label>
+        <input type="text" id="int_rfid" style="width: 90%;" formControlName="int_rfid" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="str_rdso_no">RDSO Specification No</label>
+        <select id="str_rdso_no" style="width: 90%;" formControlName="str_rdso_no"  #mySelect (change)='onOptionsSelected(mySelect.value)'>
+            <option *ngFor="let item of rdsolist" [value]="item.str_rdso_spec">{{ item.str_rdso_spec }}</option>
+          </select>
+          
+      </div>
+      <div class="form-field">
+        <label for="dbl_lat">Latitude</label>
+        <input type="text" id="dbl_lat" style="width: 90%;" formControlName="dbl_lat" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="dbl_long">Longitude</label>
+        <input type="text" id="dbl_long" style="width: 90%;" formControlName="dbl_long" />
+      </div>
+      <div class="form-field">
+        <label for="str_make">Make</label>
+        <select id="str_make" style="width: 90%;" formControlName="str_make" >
+          <option *ngFor="let category of makekavachlist" [value]="category.str_rdso_spec">{{ category.str_make}}</option>         
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="str_model">Model</label>
+        <input type="text" id="str_model" style="width: 90%;" formControlName="str_model" />
+      </div>
+      <div class="form-field">
+        <label for="str_model_type">Type of Model as per RSDO Specification</label>
+        <select id="str_model_type" style="width: 90%;" formControlName="str_model_type">
+          <option value="option1">For 4-6 line wayside station without AFTC in Non RE area[Drg: SDO/IPS/PI-6L/NRE 003]</option>
+          <option value="option2">For 4-6 line wayside station without AFTC in Non RE area[Drg: SDO/IPS/PI-6L/RE 004]</option>
+          <option value="option3">For 4-6 line wayside station without AFTC in RE area</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="dbl_erthng">Earthing</label>
+        <input type="text" id="dbl_erthng" style="width: 90%;" formControlName="dbl_erthng" />
+      </div>
+      <div class="form-field">
+        <label for="str_sl_no">Serial Number</label>
+        <input type="text" id="str_sl_no" style="width: 90%;" formControlName="str_sl_no" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="str_conn_to">Connected To</label>
+        <input type="text" id="str_conn_to" style="width: 90%;" formControlName="str_conn_to" />
+      </div>
+      <div class="form-field">
+        <label for="str_gear_pos">Gear Position</label>
+        <input type="text" id="str_gear_pos" style="width: 90%;" formControlName="str_gear_pos" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="dbl_pole_km">Pole KM</label>
+        <input type="text" id="dbl_pole_km" style="width: 90%;" formControlName="dbl_pole_km" />
+      </div>
+      <div class="form-field">
+        <label for="platform_no">Platform No</label>
+        <input type="text" id="platform_no" style="width: 90%;" formControlName="platform_no" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="po_number">PO Number</label>
+        <input type="text" id="po_number" style="width: 90%;" formControlName="po_number" />
+      </div>
+      <div class="form-field">
+        <label for="dt_mfd">Manufactured Date</label>
+        <input type="date" id="dt_mfd" style="width: 90%;" formControlName="dt_mfd" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="dt_purchase">Purchase Date</label>
+        <input type="date" id="dt_purchase" style="width: 90%;" formControlName="dt_purchase" />
+      </div>
+      <div class="form-field">
+        <label for="dt_install">Installation Date</label>
+        <input type="date" id="dt_install" style="width: 90%;" formControlName="dt_install" />
+      </div>
+    </div>
+
+    
+    <div class="form-row">
+      <div class="form-field">
+        <label for="dt_warranty_exp">Warranty Expiry Date</label>
+        <input type="date" id="dt_warranty_exp" style="width: 90%;" formControlName="dt_warranty_exp" />
+      </div>
+      <div class="form-field">
+        <label for="dt_mntnc_strt6">Maintenance Start Date</label>
+        <input type="date" id="dt_mntnc_strt" style="width: 90%;" formControlName="dt_mntnc_strt" />
+      </div>
+    </div>
+</form>
+</div>

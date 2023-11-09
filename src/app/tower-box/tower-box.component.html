@@ -1,0 +1,104 @@
+<div class="form-card">
+  <form [formGroup]="RadioModemform">
+    <div class="form-group">
+      <h3>Radio Modem:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_radio_mod_COUNT" style="width: 60px; height: 40px;" formControlName="int_radio_mod_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+    </div>
+    <div formArrayName="entries">
+<!--       <div *ngFor="let item of getRadioModemQuantityArray(); let i=index" > -->
+  <div *ngFor="let item of RadioModementries.controls; let i = index">
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0">S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0">DOM </label>
+            <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0">DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </form>
+</div>
+<div class="form-card">
+  <form [formGroup]="RadioCommunicationform">
+    <div class="form-group">
+      <h3>Station Radio communication Interface unit:
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_radio_comm_unit_COUNT" style="width: 60px; height: 40px;" formControlName="int_radio_comm_unit_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+      </h3>
+  </div>
+   <div formArrayName="entries">
+    <!-- <div *ngFor="let item of getRadioCommunicationQuantityArray(); let i=index"> -->
+      <div *ngFor="let item of RadioCommunicationentries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label  *ngIf="i === 0">S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label  *ngIf="i === 0">DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label  *ngIf="i === 0" >DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+    </form>
+ </div>
+ <div class="form-card">
+  <form [formGroup]="Converterform">
+    <div class="form-group">
+      <h3>RS485-232 CONVERTER: 
+      <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+      <select id="int_RS485_232_COUNT" style="width: 60px; height: 40px;" formControlName="int_RS485_232_COUNT" (change)="onQtyChange()">
+        <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+      </select>
+    </h3>
+  </div>
+  <div formArrayName="entries">
+    <!-- <div *ngFor="let item of getConverterQuantityArray(); let i=index"> -->
+       <div *ngFor="let item of Converterentries.controls; let i = index">
+      <div [formGroupName]="i">
+      <div class="form-row">
+        <div class="form-group">
+          <label *ngIf="i === 0" >S No</label>
+          <input type="text" id="{{'str_kavach_card_sl_no'+i}}" formControlName='str_kavach_card_sl_no'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0" > DOM</label>
+          <input type="date" id="{{'dt_kawach_card_mfd'+i}}" formControlName='dt_kawach_card_mfd'>
+        </div>
+        <div class="form-group">
+          <label *ngIf="i === 0" > DOI</label>
+          <input type="date" id="{{'dt_kawach_card_install'+i}}" formControlName='dt_kawach_card_install'>
+        </div>
+</div>
+</div>
+    </div>
+  </div>
+</form>
+ </div>
+
+<!--  <button type="submit" class="submit-button" (click)="onSubmit()">Next</button> -->
+
+
+

@@ -1,0 +1,66 @@
+<!-- modal-content.component.html -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Feedback Action Details</h3>
+      <button type="button" class="close" (click)="closeModal()" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>      
+    </div>
+    
+    <div class="modal-body">
+        <div class="form-row">
+            <div class="field">
+              <label for="module" >Module</label>
+              <input type="text" name="module" [(ngModel)]="Module" [disabled]="isInputDisabled" >
+            </div>
+            <div class="field">
+              <label for="SubModule">Sub Module</label>
+              <input type="text" name="submodule" [(ngModel)]="SubModule" [disabled]="isInputDisabled"> 
+            </div>
+            <div class="field">
+              <label for="feedback">Feedback Description</label>
+              <input type="text" name="strfeedbackremark" [(ngModel)]="Feedbacktype" [disabled]="isInputDisabled">
+            </div>
+            <div class="field">
+                <label for="section">Status</label>
+                <input type="text" name="status" [(ngModel)]="Status" [disabled]="isInputDisabled" >
+              </div>
+          </div>
+          <br>
+          <div class="feedback-table">
+            <table class="table table-striped table-bordered table-hover">
+               <thead class="table-info">
+                    <tr>
+                      <th>User Remark</th>
+                      <th>Reporting Time</th>
+                      <th>Cris Remark</th>
+                      <th>Cris Reply</th>
+                      <th>File</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let entry of Modelform">
+                      <td>{{entry.strfeedbackremark}}</td>
+                      <td>{{ entry.dtreportedontime | date:'dd-MM-yyyy' }}</td>
+                      <td>{{ entry.strcrisremark }}</td>
+                      <td>{{ entry.dtcrisremarkon | date:'dd-MM-yyyy' }}</td>
+                      <td>
+                        <button type="button" (click)="Imageview(entry.strfileid,entry.intfeedbackid, entry.dtreportedontime)">&nbsp; {{ entry.strfileid }}</button>
+                      <!--   <a href="file:///C:/Users/Administrator/Desktop/smms/nodedemo/uploads/Sample.jpg"></a> -->
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>  
+    </div>
+  </div>
+
+
+  
+  
+  

@@ -1,0 +1,45 @@
+<!-- modal-content.component.html -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Section Details</h3>
+      <button type="button" class="close" (click)="closeModal()" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>      
+    </div>
+    
+    <div class="modal-body">
+          <br>
+          <div class="feedback-table">
+            <table class="table table-striped table-bordered table-hover">
+               <thead class="table-info">
+                    <tr>
+                      <th>Section</th>
+                      <th>Total Assets</th>
+                      <th>Approved</th>
+                      <th>Not Approved</th>
+                      <th>Survey Completed</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let entry of sectionlist ">
+                      <td>{{entry.assetsDocSection}}</td>
+                      <td>{{ entry.totalassets }}</td>
+                      <td>{{ entry.countapproved }}</td>
+                      <td>{{ entry.countnotapproved }}</td>
+                      <td>{{ entry.countsurveycompleted }}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>  
+    </div>
+  </div>
+
+
+  
+  
+  

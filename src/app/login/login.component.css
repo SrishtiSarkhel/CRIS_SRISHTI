@@ -1,0 +1,85 @@
+html, body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('../../assets/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 3cm auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  position: static;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: 5%; /* Adjust this value as needed */
+}
+
+
+.login-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.recaptcha-container {
+  margin-bottom: 20px;
+}
+
+.login-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.login-button:hover {
+  background-color: #1d5b9d;
+  transform: translateY(-3px);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+@media only screen and (max-width: 600px) {
+  .login-container {
+    padding: 20px;
+  }
+}

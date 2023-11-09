@@ -1,0 +1,93 @@
+<div class="tab-buttons">
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'stationtcas'"
+      (click)="showComponent('stationtcas')"
+    >
+      Station TCAS
+    </button>
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'smoperation'"
+      (click)="showComponent('smoperation')"
+    >
+        SM Operation cum Indication Panel
+    </button>
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'tower-box'"
+      (click)="showComponent('tower-box')"
+    >
+        Tower Box
+    </button>
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'gsmand-gps'"
+      (click)="showComponent('gsmand-gps')"
+    >
+        GSM & GPS Antenna Hood
+    </button>
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'ofc-hut'"
+      (click)="showComponent('ofc-hut')"
+    >
+        OFC HUT
+    </button>
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'remote-unit'"
+      (click)="showComponent('remote-unit')"
+    >
+        Remote Input Unit RIU
+    </button>
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'station-antenna'"
+      (click)="showComponent('station-antenna')"
+    >
+      Station Antenna
+    </button>
+    <button
+      class="tab-button"
+      [class.selected]="selectedComponent === 'rfid'"
+      (click)="showComponent('rfid')"
+    >
+      RFID
+    </button>
+  </div>
+  
+  <!-- Use ngIf to conditionally display the selected component -->
+  <div *ngIf="selectedComponent === 'stationtcas'">
+    <app-station-tcas></app-station-tcas>
+  </div>
+  <div *ngIf="selectedComponent === 'smoperation'">
+    <app-sm-operation></app-sm-operation>
+  </div>
+  <div *ngIf="selectedComponent === 'tower-box'">
+    <app-tower-box></app-tower-box>
+  </div>
+  <div *ngIf="selectedComponent === 'gsmand-gps'">
+    <app-gsmand-gps></app-gsmand-gps>
+  </div>
+  <div *ngIf="selectedComponent === 'ofc-hut'">
+   <app-ofc-hut></app-ofc-hut>
+  </div>
+  <div *ngIf="selectedComponent === 'remote-unit'">
+    <app-remote-input></app-remote-input>
+  </div>
+  <div *ngIf="selectedComponent === 'station-antenna'">
+    <app-station-antenna></app-station-antenna>
+  </div>
+  <div *ngIf="selectedComponent === 'rfid'">
+    <app-rfid></app-rfid>
+  </div>
+
+  <div class="form-actions">
+  <button type="submit" class="btn  custom-btn" (click)="nextPage()"  [disabled]="isNextPageDisabled"  *ngIf="selectedComponent !== 'rfid'"> Next</button>
+  <button type="submit" class="btn  custom-btn" (click)="backPage()" [disabled]="isPrevPageDisabled"  *ngIf="selectedComponent !== 'stationtcas'"> Back</button>
+  <button type="submit" class="btn  custom-btn" (click)="openModal()"  *ngIf="selectedComponent == 'rfid'"> Preview</button>
+  </div>
+  
+ 
+  

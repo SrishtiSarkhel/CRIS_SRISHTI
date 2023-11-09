@@ -1,0 +1,168 @@
+<div class="form-card">
+    <form [formGroup]="Powersupplyform">
+      <div class="form-group">
+        <h3>Power supply cards:
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+        <select id="int_remote_io_pwr_crd_COUNT" style="width: 60px; height: 40px;" formControlName="int_remote_io_pwr_crd_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <!-- Display RADIO MODEM fields based on selected quantity -->
+      <div formArrayName="entries">
+      <!--   <div *ngFor="let item of getPowersupplyQuantityArray(); let i=index"> -->
+        <div *ngFor="let item of Powersupplyentries.controls; let i = index">
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" >S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" [formControlName]="'str_kavach_card_sl_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" >DOM </label>
+            <input type="date" id="{{'dt_kawach_card_mfd'+i}}" [formControlName]="'dt_kawach_card_mfd'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" >DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}" [formControlName]="'dt_kawach_card_install'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </form>
+</div>
+   <div class="form-card">
+    <form [formGroup]="VitalInputform">
+      <div class="form-group">
+        <h3>Vital Input card:
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;" > Qty </label>
+        <select id="int_remote_io_vital_crd_COUNT" style="width: 60px; height: 40px;" formControlName="int_remote_io_vital_crd_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+   <!--      <div *ngFor="let item of getVitalInputQuantityArray(); let i=index"> -->
+     <div *ngFor="let item of VitalInputentries.controls; let i = index">
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" for="slNo">S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" [formControlName]="'str_kavach_card_sl_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="dom">DOM </label>
+            <input type="date" id="{{'dt_kawach_card_mfd'+i}}" [formControlName]="'dt_kawach_card_mfd'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="doi">DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}" [formControlName]="'dt_kawach_card_install'">
+          </div>
+        </div>
+      </div>
+      </div>
+     </div>
+    </form>
+  </div>
+   <div class="form-card">
+    <form [formGroup]="SMOFCform">
+      <div class="form-group">
+        <h3>SMOFC MODEMS:
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;" > Qty </label>
+        <select id="int_remote_io_smofc_modem_COUNT" style="width: 60px; height: 40px;" formControlName="int_remote_io_smofc_modem_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+     <!--    <div *ngFor="let item of getSMOFCformQuantityArray(); let i=index"> -->
+          <div *ngFor="let item of SMOFCentries.controls; let i = index">
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" for="slNo">S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" [formControlName]="'str_kavach_card_sl_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="dom">DOM </label>
+            <input type="date" id="{{'dt_kawach_card_mfd'+i}}" [formControlName]="'dt_kawach_card_mfd'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="doi">DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}" [formControlName]="'dt_kawach_card_install'">
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="form-card">
+    <form [formGroup]="RIUBatteryform">
+      <div class="form-group">
+        <h3>RIU BATTERY CHARGERS:
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;" > Qty </label>
+        <select id="int_remote_io_riu_btry_chrg_COUNT" style="width: 60px; height: 40px;" formControlName="int_remote_io_riu_btry_chrg_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+      <!--   <div *ngFor="let item of getRIUBatteryformQuantityArray(); let i=index"> -->
+        <div *ngFor="let item of RIUBatteryentries.controls; let i = index">
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" for="slNo">S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" [formControlName]="'str_kavach_card_sl_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="dom">DOM </label>
+            <input type="date" id="{{'dt_kawach_card_mfd'+i}}" [formControlName]="'dt_kawach_card_mfd'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="doi">DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}" [formControlName]="'dt_kawach_card_install'">
+          </div>
+        </div>
+      </div>
+       </div>
+     </div>
+    </form>
+  </div>
+  <div class="form-card">
+    <form [formGroup]="Batteriesform">
+      <div class="form-group">
+        <h3>BATTERIES 12V 42AH:
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;"> Qty </label>
+        <select id="int_remote_io_riu_btry_12v_42ah_COUNT" style="width: 60px; height: 40px;" formControlName="int_remote_io_riu_btry_12v_42ah_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+        <!-- <div *ngFor="let item of getBatteriesformQuantityArray(); let i=index"> -->
+          <div *ngFor="let item of Batteriesentries.controls; let i = index"> 
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" for="slNo">S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" [formControlName]="'str_kavach_card_sl_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="dom">DOM </label>
+            <input type="date" id="{{'dt_kawach_card_mfd'+i}}" [formControlName]="'dt_kawach_card_mfd'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="doi">DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}" [formControlName]="'dt_kawach_card_install'">
+          </div>
+        </div>
+      </div>
+    </div>
+     </div>
+    </form>
+   <!--  <button type="submit" class="submit-button" (click)="onSubmit()">Next</button> -->
+  </div>
+   

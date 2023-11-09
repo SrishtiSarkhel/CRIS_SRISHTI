@@ -1,0 +1,68 @@
+<div class="form-card">
+    <form [formGroup]="gsmform">
+      <div class="form-group">
+        <h3>GSM ANTENNA: 
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;" > Qty </label>
+        <select id="int_GSM_antenna_COUNT" style="width: 60px; height: 40px;" formControlName="int_GSM_antenna_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+       <!--  <div *ngFor="let item of getGsmQuantityArray(); let i=index"> -->
+        <div *ngFor="let item of Gsmentries.controls; let i = index">
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" for="slNo">S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" [formControlName]="'str_kavach_card_sl_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="dom">DOM </label>
+            <input type="date"  id="{{'dt_kawach_card_mfd'+i}}" [formControlName]="'dt_kawach_card_mfd'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="doi">DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}"  [formControlName]="'dt_kawach_card_install' ">
+          </div>
+        </div>
+      </div>
+    </div>
+     </div>
+ </form>
+  </div>
+  <div class="form-card">
+    <form [formGroup]="gspform">
+      <div class="form-group">
+        <h3>GPS ANTENNA:
+        <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;" > Qty </label>
+        <select id="int_GPS_antenna_COUNT" style="width: 60px; height: 40px;" formControlName="int_GPS_antenna_COUNT" (change)="onQtyChange()">
+          <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+        </select>
+        </h3>
+      </div>
+      <div formArrayName="entries">
+     <!--    <div *ngFor="let item of getGspQuantityArray(); let i=index"> -->
+      <div *ngFor="let item of Gspentries.controls; let i = index">
+        <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" for="slNo">S No </label>
+            <input type="text" id="{{'str_kavach_card_sl_no'+i}}" [formControlName]="'str_kavach_card_sl_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="dom">DOM </label>
+            <input type="date" id="{{'dt_kawach_card_mfd'+i}}" [formControlName]="'dt_kawach_card_mfd'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="doi">DOI </label>
+            <input type="date" id="{{'dt_kawach_card_install'+i}}"  [formControlName]="'dt_kawach_card_install'">
+          </div>
+        </div>
+      </div>
+       </div>
+      </div>
+    </form>
+<!--     <button type="submit" class="submit-button" (click)="onSubmit()">Next</button> -->
+  </div>
+  

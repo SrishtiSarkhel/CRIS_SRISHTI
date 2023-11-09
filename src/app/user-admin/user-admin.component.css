@@ -1,0 +1,103 @@
+.custom-navbar {
+  margin: 0;
+  padding: 0;
+  }
+  .navbar-brand{
+  font-weight:400;
+  font-size: 30px;
+  }
+  /* Top navigation bar */
+  .custom-navbar-blue {
+    background-color: #3b5183; 
+    height: 70px;
+    border-radius: 0;
+    }
+    
+    .custom-navbar-blue .navbar-brand {
+    color: white; 
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    }
+    
+    /* Second Navbar (White) */
+    /* Style the anchor elements inside the navbar */
+    .navbar-default .navbar-nav > li > a {
+    color: black; 
+    font-size: 18px; /* Set font size to 20px */
+    margin: 0; /* Remove any margin */
+    }
+    .navbar-default .navbar-nav{
+    margin-left: -180px;
+    
+    }
+    .navbar-default{
+    background-color: lightblue;
+    border:none;
+    border-radius: 0;
+    }
+  .shadowed-navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow with specific values */
+  }
+  
+  a:hover{
+  cursor: pointer;
+  
+  }
+.form-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow fields to wrap to the next line */
+    margin-bottom: 15px; /* Increase spacing between rows */
+    margin-top: 20px;
+  }
+  
+  .field {
+    margin-bottom: 10px; /* Adjust the margin-bottom value to reduce space between fields */
+  }
+
+  label {
+    display: inline-block;
+    width: 120px; /* Adjust the width to align the labels properly */
+    text-align: right; /* Align the labels to the right */
+    margin-right: 10px; /* Add some space between the label and the input */
+  }
+
+  .feedback-table {
+    margin-top: 20px;
+  }
+
+  
+  .table-container {
+    margin-top: 20px; /* Adjust margin-top as needed */
+  }
+ 
+  table {
+    width: 98%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 10px; 
+    margin-left: 15px;
+    margin-right: 15px;/* Adjust margin-top as needed */
+  }
+
+  /* Style table headers */
+  th {
+    background-color: lightblue;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+  }
+
+  /* Style table cells */
+  td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .submit-button{
+    margin-left: 10px;
+  }
+
+  

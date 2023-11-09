@@ -1,0 +1,43 @@
+<div class="form-card">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <h3 style="margin-top: 0%;">
+            <label style="font-size: medium; margin-left: 10px; margin-right:10px; margin-bottom: 0px; color: black;" > Qty </label>
+            <select id="int_rfid_COUNT" style="width: 60px; height: 40px;" formControlName="int_rfid_COUNT" (change)="onQtyChange()">
+              <option *ngFor="let qtyOption of qtyOptions" [value]="qtyOption">{{ qtyOption }}</option>
+            </select>
+        </h3>
+      </div>      
+    <div formArrayName="entries">
+       <!--  <div *ngFor="let item of getQuantityArray(); let i=index" > -->
+        <div *ngFor="let item of entries.controls; let i = index">
+          <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="form-group">
+            <label *ngIf="i === 0" for="tagNo">Tag No</label>
+            <input type="text" id="{{'str_rfid_tag_no'+i}}" [formControlName]="'str_rfid_tag_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="tagType">Type of Tag</label>
+            <select id="{{'str_rfid_type_tag'+i}}" [formControlName]="'str_rfid_type_tag'">
+              <option value="Tag type 1">Tag type 1</option>
+              <option value="Tag type 2">Tag type 2</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="roadLineNo">Road/Line No.</label>
+            <input type="text" id="{{'str_rfid_road_no'+i}}" [formControlName]="'str_rfid_road_no'">
+          </div>
+          <div class="form-group">
+            <label *ngIf="i === 0" for="locationOfTag">Location of Tag</label>
+            <input type="text" id="{{'str_rfid_tag_loc'+i}}" [formControlName]="'str_rfid_tag_loc'">
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+    </form>
+<!--       <button type="submit" class="submit-button" (click)="onSubmit();">Next</button> -->
+
+  

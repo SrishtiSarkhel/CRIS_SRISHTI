@@ -1,0 +1,68 @@
+/* Style for the form heading */
+.form-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the form */
+  .two-column-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Style for form rows */
+  .form-row {
+    flex-basis: calc(50% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Add this property to space the form fields */
+  }
+  
+  /* Style for form fields */
+  .form-field {
+    flex-basis: calc(48% - 10px); /* Adjust the width for two fields in one row */
+    margin-bottom: 10px;
+  }
+  
+  /* Style for labels */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Style for input and select elements */
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Style for the custom select */
+
+  
+  /* Style for the submit button */
+  .submit-button {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect for the submit button */
+  .submit-button:hover {
+    background-color: #357ae8;
+  }
+  

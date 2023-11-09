@@ -1,0 +1,599 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Kavach form details</h3>
+      <button type="button"  class="close"  (click)="closeModal()" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>      
+    </div>
+    <div class="modal-body">
+   <div class="geninfo">
+    <h3>General Info details:</h3>
+    <div class="form-row">
+        <div class="field">
+          <label for="module" >Asset Code</label>
+          <input type="text" name="int_asset_code" [(ngModel)]="generalinstaldsiplay.int_asset_code" >
+        </div>
+        <div class="field">
+          <label for="SubModule">RFID</label>
+          <input type="text" name="int_RFID"  [(ngModel)]="generalinstaldsiplay.int_RFID" > 
+        </div>
+        <div class="field">
+          <label for="feedback">RDSO Specification No</label>
+          <input type="text" name="str_rdso_no" [(ngModel)]="generalinstaldsiplay.str_rdso_no"  >
+        </div>
+        <div class="field">
+            <label for="section">Latitude</label>
+            <input type="text" name="dbl_lat" [(ngModel)]="generalinstaldsiplay.dbl_lat"  >
+        </div>
+         <div class="field">
+            <label for="section">Longitude</label>
+            <input type="text" name="dbl_long" [(ngModel)]="generalinstaldsiplay.dbl_long"  >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="module" >Make</label>
+          <input type="text" name="str_make" [(ngModel)]="generalinstaldsiplay.str_make"  >
+        </div>
+        <div class="field">
+          <label for="SubModule">Model</label>
+          <input type="text" name="str_model" [(ngModel)]="generalinstaldsiplay.str_model"  > 
+        </div>
+        <div class="field">
+          <label for="feedback">Type of Model as per RSDO Spec.</label>
+          <input type="text" name="str_model_type" [(ngModel)]="generalinstaldsiplay.str_model_type"  >
+        </div>
+        <div class="field">
+            <label for="section">Connected To</label>
+            <input type="text" name="str_conn_to" [(ngModel)]="generalinstaldsiplay.str_conn_to"  >
+        </div>
+         <div class="field">
+            <label for="section">Gear Position</label>
+            <input type="text" name="str_gear_pos" [(ngModel)]="generalinstaldsiplay.str_gear_pos"  >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="module" >Pole KM</label>
+          <input type="text" name="dbl_pole_km" [(ngModel)]="generalinstaldsiplay.dbl_pole_km"   >
+        </div>
+        <div class="field">
+          <label for="SubModule">Platform No</label>
+          <input type="text" name="plaform_no" [(ngModel)]="generalinstaldsiplay.plaform_no"  > 
+        </div>
+        <div class="field">
+          <label for="feedback">PO Number</label>
+          <input type="text" name="po_number" [(ngModel)]="generalinstaldsiplay.po_number"  >
+        </div>
+        <div class="field">
+            <label for="section">Manufactured Date</label>
+            <input type="text" name="dt_mfd" [(ngModel)]="generalinstaldsiplay.dt_mfd"  >
+        </div>
+         <div class="field">
+            <label for="section">Purchase Date</label>
+            <input type="text" name="dt_purchase" [(ngModel)]="generalinstaldsiplay.dt_purchase"  >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="module">Installation Date</label>
+          <input type="text" name="dt_install" [(ngModel)]="generalinstaldsiplay.dt_install"  >
+        </div>
+        <div class="field">
+          <label for="SubModule">Warranty Expiry Date</label>
+          <input type="text" name="dt_warranty_exp" [(ngModel)]="generalinstaldsiplay.dt_warranty_exp" > 
+        </div>
+        <div class="field">
+          <label for="feedback">Maintenance Start Date</label>
+          <input type="text" name="dt_mntnc_strt" [(ngModel)]="generalinstaldsiplay.dt_mntnc_strt"  >
+        </div>
+        <div class="field">
+        </div>
+        <div class="field">
+        </div>
+      </div>
+    </div> 
+    <div class="installloc">
+        <h3>Installation location details:</h3>
+      <div class="form-row">
+        <div class="field">
+          <label for="module" >Zone</label>
+         <input type="text" name="str_zone_code" [(ngModel)]="generalinstaldsiplay.str_zone_code" >
+        </div>
+       <div class="field">
+           <label for="SubModule">Division</label>
+           <input type="text" name="str_div_code" [(ngModel)]="generalinstaldsiplay.str_div_code" > 
+        </div>
+        <div class="field">
+            <label for="feedback">Section</label>
+            <input type="text" name="str_sec_code"  [(ngModel)]="generalinstaldsiplay.str_sec_code">
+        </div>
+        <div class="field">
+             <label for="section">Location Type</label>
+             <input type="text" name="str_loc_type" [(ngModel)]="generalinstaldsiplay.str_loc_type" >
+        </div>
+        <div class="field">
+            <label for="section">Location</label>
+            <input type="text" name="str_locn" [(ngModel)]="generalinstaldsiplay.str_locn" >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="module" >Route</label>
+         <input type="text" name="int_route" [(ngModel)]="generalinstaldsiplay.int_route" >
+        </div>
+       <div class="field">
+           <label for="SubModule">Codal Life (In Years)</label>
+           <input type="text" name="int_codal_life" [(ngModel)]="generalinstaldsiplay.int_codal_life" > 
+        </div>
+        <div class="field">
+        </div>
+        <div class="field">
+        </div>
+        <div class="field">
+        </div>
+      </div>      
+    </div>
+    <div class="components">
+     <h3>Station TCAS details:</h3>
+     <div class="form-card">
+      <h4>STCAS Power Supply card</h4>
+    <div>
+        <table class="table table-striped table-bordered table-hover">
+           <thead class="table-info">
+                <tr>
+                  <th>Spec</th>
+                  <th>S No</th>
+                  <th>DOM</th>
+                  <th>DOI</th>
+                  <th>Range of Output</th>
+                </tr>
+           </thead>
+           <tbody>
+                <tr *ngFor="let entry of Stcas_list1">
+                  <td>{{ entry.str_kawach_card_spec }}</td>
+                  <td>{{ entry.str_kavach_card_sl_no }}</td>
+                  <td>{{ entry.dt_kawach_card_mfd }}</td>
+                  <td>{{ entry.dt_kawach_card_install}}</td>
+                  <td>{{entry.str_kawach_card_range_of_output}}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+     </div>
+     <div class="form-card">
+        <h4>STCAS MODEM card</h4>
+      <div>
+          <table class="table table-striped table-bordered table-hover">
+             <thead class="table-info">
+                  <tr>
+                    <th>S No</th>
+                    <th>DOM</th>
+                    <th>DOI</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let entry of Stcas_list2">
+                    <td>{{ entry.str_kavach_card_sl_no }}</td>
+                    <td>{{ entry.dt_kawach_card_mfd }}</td>
+                    <td>{{ entry.dt_kawach_card_install}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+       <div class="form-card">
+        <h4>Vital Computer card</h4>
+      <div>
+          <table class="table table-striped table-bordered table-hover">
+             <thead class="table-info">
+                  <tr>
+                    <th>S No</th>
+                    <th>DOM</th>
+                    <th>DOI</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let entry of Stcas_list3">
+                    <td>{{ entry.str_kavach_card_sl_no }}</td>
+                    <td>{{ entry.dt_kawach_card_mfd }}</td>
+                    <td>{{ entry.dt_kawach_card_install}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+       <div class="form-card">
+        <h4>Communication Interface Module</h4>
+      <div>
+          <table class="table table-striped table-bordered table-hover">
+             <thead class="table-info">
+                  <tr>
+                    <th>S No</th>
+                    <th>DOM</th>
+                    <th>DOI</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let entry of Stcas_list4">
+                    <td>{{ entry.str_kavach_card_sl_no }}</td>
+                    <td>{{ entry.dt_kawach_card_mfd }}</td>
+                    <td>{{ entry.dt_kawach_card_install}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+       <div class="form-card">
+        <h4>Event Logger Module</h4>
+      <div>
+          <table class="table table-striped table-bordered table-hover">
+             <thead class="table-info">
+                  <tr>
+                    <th>S No</th>
+                    <th>DOM</th>
+                    <th>DOI</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let entry of Stcas_list5">
+                    <td>{{ entry.str_kavach_card_sl_no }}</td>
+                    <td>{{ entry.dt_kawach_card_mfd }}</td>
+                    <td>{{ entry.dt_kawach_card_install}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+       <div class="form-card">
+        <h4>Vital Input Card</h4>
+      <div>
+          <table class="table table-striped table-bordered table-hover">
+             <thead class="table-info">
+                  <tr>
+                    <th>S No</th>
+                    <th>DOM</th>
+                    <th>DOI</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let entry of Stcas_list6">
+                    <td>{{ entry.str_kavach_card_sl_no }}</td>
+                    <td>{{ entry.dt_kawach_card_mfd }}</td>
+                    <td>{{ entry.dt_kawach_card_install}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+       <div class="form-card">
+        <h4>MODEM</h4>
+      <div>
+          <table class="table table-striped table-bordered table-hover">
+             <thead class="table-info">
+                  <tr>
+                    <th>S No</th>
+                    <th>DOM</th>
+                    <th>DOI</th>
+                    <th>Range of communication</th>
+                    <th>Power Supply</th>
+                    <th>Working Frequency</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let entry of Stcas_list7">
+                    <td>{{ entry.str_kavach_card_sl_no }}</td>
+                    <td>{{ entry.dt_kawach_card_mfd }}</td>
+                    <td>{{ entry.dt_kawach_card_install}}</td>
+                    <td>{{ entry.str_kawach_card_roc}}</td>
+                    <td>{{ entry.int_kawach_card_ps}}</td>
+                    <td>{{ entry.int_kawach_card_workng_freq}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+       </div>
+       <h3>SM Operation cum Indication Panel details:</h3>
+     <div class="form-card">
+      <h4>SMOCIP Unit</h4>
+    <div>
+        <table class="table table-striped table-bordered table-hover">
+           <thead class="table-info">
+                <tr>
+                  <th>S No</th>
+                  <th>DOM</th>
+                  <th>DOI</th>
+                  <th>Make</th>
+                  <th>Power Supply</th>
+                </tr>
+           </thead>
+           <tbody>
+                <tr *ngFor="let entry of SmOperation_list">
+                  <td>{{ entry.str_kavach_card_sl_no }}</td>
+                  <td>{{ entry.dt_kawach_card_mfd }}</td>
+                  <td>{{ entry.dt_kawach_card_install}}</td>
+                  <td>{{entry.str_kawach_card_make}}</td>
+                  <td>{{entry.int_kawach_card_ps}}</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+     </div>
+     <h3>Tower Box details:</h3>
+     <div class="form-card">
+        <h4>Radio Modem</h4>
+      <div>
+          <table class="table table-striped table-bordered table-hover">
+             <thead class="table-info">
+                  <tr>
+                    <th>S No</th>
+                    <th>DOM</th>
+                    <th>DOI</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let entry of towerbox_list1">
+                    <td>{{ entry.str_kavach_card_sl_no }}</td>
+                    <td>{{ entry.dt_kawach_card_mfd }}</td>
+                    <td>{{ entry.dt_kawach_card_install}}</td>
+                    <td>{{entry.str_kawach_card_make}}</td>
+                    <td>{{entry.int_kawach_card_ps}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Station Radio communication Interface unit</h4>
+          <div>
+            <table class="table table-striped table-bordered table-hover">
+               <thead class="table-info">
+                    <tr>
+                      <th>S No</th>
+                      <th>DOM</th>
+                      <th>DOI</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let entry of towerbox_list2">
+                      <td>{{ entry.str_kavach_card_sl_no }}</td>
+                      <td>{{ entry.dt_kawach_card_mfd }}</td>
+                      <td>{{ entry.dt_kawach_card_install}}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <h4>RS485-232 CONVERTER</h4>
+            <div>
+              <table class="table table-striped table-bordered table-hover">
+                 <thead class="table-info">
+                      <tr>
+                        <th>S No</th>
+                        <th>DOM</th>
+                        <th>DOI</th>
+                      </tr>
+                 </thead>
+                 <tbody>
+                      <tr *ngFor="let entry of towerbox_list3">
+                        <td>{{ entry.str_kavach_card_sl_no }}</td>
+                        <td>{{ entry.dt_kawach_card_mfd }}</td>
+                        <td>{{ entry.dt_kawach_card_install}}</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+       </div>
+       <h3> GSM & GPS Antenna Hood details:</h3>
+       <div class="form-card">
+          <h4>GSM ANTENNA</h4>
+        <div>
+            <table class="table table-striped table-bordered table-hover">
+               <thead class="table-info">
+                    <tr>
+                      <th>S No</th>
+                      <th>DOM</th>
+                      <th>DOI</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr *ngFor="let entry of Gsm_list">
+                      <td>{{ entry.str_kavach_card_sl_no }}</td>
+                      <td>{{ entry.dt_kawach_card_mfd }}</td>
+                      <td>{{ entry.dt_kawach_card_install}}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <h4>GPS ANTENNA</h4>
+            <div>
+              <table class="table table-striped table-bordered table-hover">
+                 <thead class="table-info">
+                      <tr>
+                        <th>S No</th>
+                        <th>DOM</th>
+                        <th>DOI</th>
+                      </tr>
+                 </thead>
+                 <tbody>
+                      <tr *ngFor="let entry of Gsp_list">
+                        <td>{{ entry.str_kavach_card_sl_no }}</td>
+                        <td>{{ entry.dt_kawach_card_mfd }}</td>
+                        <td>{{ entry.dt_kawach_card_install}}</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+         </div>
+         <h3> OFC hut details:</h3>
+         <div class="form-card">
+            <h4>MODEM</h4>
+          <div>
+              <table class="table table-striped table-bordered table-hover">
+                 <thead class="table-info">
+                      <tr>
+                        <th>S No</th>
+                        <th>DOM</th>
+                        <th>DOI</th>
+                      </tr>
+                 </thead>
+                 <tbody>
+                      <tr *ngFor="let entry of Ofchut_list">
+                        <td>{{ entry.str_kavach_card_sl_no }}</td>
+                        <td>{{ entry.dt_kawach_card_mfd }}</td>
+                        <td>{{ entry.dt_kawach_card_install}}</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+           </div>
+           <h3> Remote Input Unit RIU:</h3>
+           <div class="form-card">
+              <h4>Power supply cards</h4>
+            <div>
+                <table class="table table-striped table-bordered table-hover">
+                   <thead class="table-info">
+                        <tr>
+                          <th>S No</th>
+                          <th>DOM</th>
+                          <th>DOI</th>
+                        </tr>
+                   </thead>
+                   <tbody>
+                        <tr *ngFor="let entry of Remote_Input_Unitlist1">
+                          <td>{{ entry.str_kavach_card_sl_no }}</td>
+                          <td>{{ entry.dt_kawach_card_mfd }}</td>
+                          <td>{{ entry.dt_kawach_card_install}}</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h4>Vital Input card</h4>
+                <div>
+                    <table class="table table-striped table-bordered table-hover">
+                       <thead class="table-info">
+                            <tr>
+                              <th>S No</th>
+                              <th>DOM</th>
+                              <th>DOI</th>
+                            </tr>
+                       </thead>
+                       <tbody>
+                            <tr *ngFor="let entry of Remote_Input_Unitlist2">
+                              <td>{{ entry.str_kavach_card_sl_no }}</td>
+                              <td>{{ entry.dt_kawach_card_mfd }}</td>
+                              <td>{{ entry.dt_kawach_card_install}}</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <h4>SMOFC MODEMS</h4>
+                <div>
+                    <table class="table table-striped table-bordered table-hover">
+                       <thead class="table-info">
+                            <tr>
+                              <th>S No</th>
+                              <th>DOM</th>
+                              <th>DOI</th>
+                            </tr>
+                       </thead>
+                       <tbody>
+                            <tr *ngFor="let entry of Remote_Input_Unitlist3">
+                              <td>{{ entry.str_kavach_card_sl_no }}</td>
+                              <td>{{ entry.dt_kawach_card_mfd }}</td>
+                              <td>{{ entry.dt_kawach_card_install}}</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <h4>RIU BATTERY CHARGERS</h4>
+                    <div>
+                        <table class="table table-striped table-bordered table-hover">
+                           <thead class="table-info">
+                                <tr>
+                                  <th>S No</th>
+                                  <th>DOM</th>
+                                  <th>DOI</th>
+                                </tr>
+                           </thead>
+                           <tbody>
+                                <tr *ngFor="let entry of Remote_Input_Unitlist4">
+                                  <td>{{ entry.str_kavach_card_sl_no }}</td>
+                                  <td>{{ entry.dt_kawach_card_mfd }}</td>
+                                  <td>{{ entry.dt_kawach_card_install}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>  
+                        <h4>BATTERIES 12V 42AH</h4>
+                        <div>
+                            <table class="table table-striped table-bordered table-hover">
+                               <thead class="table-info">
+                                    <tr>
+                                      <th>S No</th>
+                                      <th>DOM</th>
+                                      <th>DOI</th>
+                                    </tr>
+                               </thead>
+                               <tbody>
+                                    <tr *ngFor="let entry of Remote_Input_Unitlist5">
+                                      <td>{{ entry.str_kavach_card_sl_no }}</td>
+                                      <td>{{ entry.dt_kawach_card_mfd }}</td>
+                                      <td>{{ entry.dt_kawach_card_install}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                          </div>       
+              </div>
+              <h3>  Station Antenna details:</h3>
+              <div class="form-card">
+               <div>
+                   <table class="table table-striped table-bordered table-hover">
+                      <thead class="table-info">
+                           <tr>
+                             <th>Frequency Band</th>
+                             <th>Input Impedance</th>
+                             <th>Gain</th>
+                             <th>Polarization</th>
+                           </tr>
+                      </thead>
+                      <tbody>
+                           <tr *ngFor="let entry of Station_Antenna_list">
+                             <td>{{ entry.int_stn_antenna_freq_band }}</td>
+                             <td>{{ entry.int_stn_antenna_ip_impd}}</td>
+                             <td>{{ entry.int_stn_antenna_gain }}</td>
+                             <td>{{ entry.int_stn_antenna_polar}}</td>
+                           </tr>
+                       </tbody>
+                     </table>
+                   </div>
+                </div>
+                <h3> RFID details:</h3>
+                <div class="form-card">
+                 <div>
+                     <table class="table table-striped table-bordered table-hover">
+                        <thead class="table-info">
+                             <tr>
+                               <th>Tag No</th>
+                               <th>Type of Tag</th>
+                               <th>Road/Line No.</th>
+                               <th>Location of Tag</th>
+                             </tr>
+                        </thead>
+                        <tbody>
+                             <tr *ngFor="let entry of RFID_list">
+                               <td>{{ entry.str_rfid_tag_no }}</td>
+                               <td>{{ entry.str_rfid_type_tag }}</td>
+                               <td>{{ entry.str_rfid_road_no }}</td>
+                               <td>{{ entry.str_rfid_tag_loc}}</td>
+                             </tr>
+                         </tbody>
+                       </table>
+                     </div>
+                  </div>  
+      </div>    
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary"(click)="redirect()" >Edit</button>
+      <button type="button" class="btn btn-secondary"  (click)="closeModal()" >Close</button>  
+      <button type="button" class="btn btn-secondary" (click)="FinalSubmit()" >OK</button>
+    </div>
+</div>

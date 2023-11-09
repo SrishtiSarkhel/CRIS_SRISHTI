@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script>
+    src="https://www.google.com/recaptcha/api.js"
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
+</head>
+<body>
+  <br>
+  <div class="login-container">
+    <h2>Login Page</h2>
+    <br>
+    <div class="form-group">
+      <label for="username">User Name</label>
+      <input type="text" id="username" [(ngModel)]="uname" name="uname">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="pwd" name="pwd">
+    </div>
+    <br>
+    <br>
+    <button class="login-button" (click)="validateUser()" 
+    data-sitekey="reCAPTCHA_site_key" 
+    data-callback='onSubmit' 
+    data-action='submit'>Login</button>
+    <div class="error-message">{{msg}}</div>
+  </div>
+  <br>
+  
+</body>
+</html>
+

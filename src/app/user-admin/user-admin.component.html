@@ -1,0 +1,98 @@
+<nav class="navbar navbar-light custom-navbar custom-navbar-blue">
+  <div class="container-fluid">
+    <a class="navbar-brand">SMMS</a>
+  </div>
+</nav>
+<nav class="navbar navbar-default shadowed-navbar" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+          
+        <li><a href="user-admin">Feedback </a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="form-row">
+    <div class="field">
+      <label for="Zonetype">Zone</label>
+          <select id="Zonetype" name="Zonetype" [(ngModel)]="selectedZone">
+            <option value="" >All </option> #mySelect (change)="onZoneSelected(mySelect.value)"
+             <option *ngFor="let category of zonelist" [value]="category.strzonecode">{{ category.strzonename}}</option>  
+          </select>
+    </div>
+    <div class="field">
+        <label for="Division">Division </label>
+        <select id="Divisiontype" [(ngModel)]="selectedDivsion">
+          <option value="" >All</option>
+        <option *ngFor="let category of divisionlist" [value]="category.strdivisioncode">{{category.strdivisionname}}</option>
+         </select>
+    </div>
+    <div class="field">
+      <label for="category">Module</label>
+      <select id="category" name="intModuleID"  [(ngModel)]="selectedModule" #select (change)='onModuleSelected(select.value)'>
+        <option value="" >All</option>
+        <option *ngFor="let category of modulelist" [value]="category.intmoduleid">{{category.strmoduledescription }}</option>
+      </select>
+      </div>
+      <div class="field">
+        <label for="submodule">Sub Module</label>
+            <select id="submodule"   [(ngModel)]="selectedSubModule">
+              <option value=""  >All</option>
+               <option *ngFor="let category of submodulelist" [value]="category.strsubmoduledescription">{{ category.strsubmoduledescription}}</option>  
+            </select>
+      </div>
+      <div class="field">
+        <label for="Zone">Status</label>
+            <select id="Statustype"   [(ngModel)]="selectedStatus">
+              <option value="" >All </option>
+               <option *ngFor="let category of statuslist" [value]="category.strstatusdescription">{{ category.strstatusdescription}}</option>  
+            </select>
+      </div>
+    <button class="submit-button" (click)="filterTable()">search </button>
+</div>
+
+<div class="table-container">
+    <table class="table table-striped table-bordered table-hover">
+       <thead class="table-info">
+            <tr>
+              <th>Zone</th>
+              <th>Division</th>
+              <th>User</th>
+              <th>Contact details</th>
+              <th>Module</th>
+              <th>Sub Module</th>
+              <th>Feedback type</th>
+              <th>Status</th>
+              <th>Complaint Date</th>
+              <th>Action</th> 
+            </tr>
+       </thead>
+       <tbody>
+            <tr *ngFor="let entry of filteredTable">
+              <td>{{entry.strzonename}} <span style="visibility:hidden;" > {{entry.intfeedbackid}}</span></td>
+              <td>{{entry.strdivisionname}}</td>
+              <td>{{entry.struserid}}</td>
+              <td>{{entry.numbmobilenumber}}</td>
+              <td>{{ entry.strmoduledescription }}</td>
+              <td>{{ entry.strsubmoduledescription }}</td>
+              <td>{{ entry.strfeedbacktypedescription }}</td>
+              <td>{{ entry.strstatusdescription }}</td>
+              <td>{{entry.dtopentime | date:'dd-MM-yyyy'}}</td>
+               <td button class="btn btn-primary"  (click)="openModal(entry.intfeedbackid,entry.strzonecode,entry.strdivisioncode,entry.struserid,entry.numbmobilenumber,entry.strmoduledescription,entry.strsubmoduledescription,entry.strfeedbacktypedescription,entry.strstatusdescription)" >View</td>
+            </tr>
+        </tbody>
+    </table>
+ </div> 
+
+ 
